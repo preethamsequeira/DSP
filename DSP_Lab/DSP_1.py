@@ -64,12 +64,12 @@ if __name__ == "__main__":
     ll.insert_at_end(10)
     ll.insert_at_end(20)
     ll.insert_at_end(30)
-    ll.display()          # 10 -> 20 -> 30
+    ll.display()          
 
     ll.insert_at_beginning(5)
-    ll.display()          # 5 -> 10 -> 20 -> 30
+    ll.display()          
 
     ll.insert_at_position(15, 2)
-    ll.display()          # 5 -> 10 -> 15 -> 20 -> 30
+    ll.display()          
 
-    ll.insert_at_position(100, 10)  # out of range example
+    ll.insert_at_position(100, 10)  
