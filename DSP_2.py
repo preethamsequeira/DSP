@@ -4,13 +4,11 @@ class Node:
         self.prev = None
         self.next = None
 
-
 class DoublyLinkedList:
-
     def __init__(self):
         self.head = None
 
-    def insert_begin(self, data):
+    def insert_at_begin(self, data):
         new_node = Node(data)
 
         if self.head is not None:
@@ -19,7 +17,7 @@ class DoublyLinkedList:
 
         self.head = new_node
 
-    def insert_end(self, data):
+    def insert_at_end(self, data):
         new_node = Node(data)
 
         if self.head is None:
@@ -34,7 +32,7 @@ class DoublyLinkedList:
         temp.next = new_node
         new_node.prev = temp
 
-    def insert_position(self, data, position):
+    def insert_at_position(self, data, position):
         new_node = Node(data)
 
         if position == 1:
@@ -66,6 +64,33 @@ class DoublyLinkedList:
 
         temp.next = new_node
 
+    def delete_at_begin(self):
+        if self.head is None:
+            print("List is empty")
+            return
+
+        if self.head is not None:
+            self.head = self.head.next
+
+    def delete_at_end(self):
+        if self.head is None:
+            print("List is empty")
+            return
+
+        if self.head.next is None:
+            self.head = None
+            return
+
+        temp = self.head
+
+        while temp.next is not None:
+            temp = temp.next
+
+        temp.prev.next = None
+
+    def delete_at_position(self, position):
+        
+
     def display(self):
         temp = self.head
 
@@ -75,14 +100,13 @@ class DoublyLinkedList:
 
         print("None")
 
-
-
 dll = DoublyLinkedList()
 
-dll.insert_begin(20)
-dll.insert_begin(10)
-dll.insert_end(40)
-dll.insert_end(50)
-dll.insert_position(30, 3)
-
+dll.insert_at_begin(20)
+dll.insert_at_begin(40)
+dll.insert_at_end(60)
+dll.insert_at_end(80)
+dll.insert_at_position(30, 3)
+dll.delete_at_begin()
+dll.delete_at_end()
 dll.display()
