@@ -21,6 +21,18 @@ def inorder(root):
         print(root.key, end=" ")
         inorder(root.right)
 
+def preorder(root):
+    if root:
+        print(root.key, end=" ")  
+        preorder(root.left)       
+        preorder(root.right)      
+
+def postorder(root):
+    if root:
+        postorder(root.left)      
+        postorder(root.right)    
+        print(root.key, end=" ")  
+
 
 root = None
 
@@ -31,3 +43,9 @@ for value in values:
 
 print("Inorder Traversal:")
 inorder(root)
+
+print("\nPreorder Traversal:")
+preorder(root)
+
+print("\nPostorder Traversal:")
+postorder(root)
